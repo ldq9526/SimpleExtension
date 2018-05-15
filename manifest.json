@@ -1,0 +1,27 @@
+{
+	"name": "FishingRecognition",
+	"description": "Fishing Sites Recognition",
+	"version": "1.0",
+	"permissions": ["tabs", "*://*/*"],
+	"browser_action": {
+		"default_title": "fishing sites Recognition",
+		"default_icon": "icon.png",
+		"default_popup": "index.html"
+	},
+	"icons": 
+	{ 
+		"16": "icon16.png",
+		"48": "icon48.png",
+		"128": "icon128.png"
+	},
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"manifest_version": 2,
+	"content_scripts":[{
+		"matches": ["*://*/*"],
+		"js": ["jquery-2.1.4.min.js","myscript.js"],
+		"run_at": "document_end",
+		"all_frames": true
+	}]
+}
